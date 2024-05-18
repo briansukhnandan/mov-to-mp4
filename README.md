@@ -8,4 +8,4 @@ Requirements: `ffmpeg`
 chmod +x convert.sh
 ./convert.sh -p $YOUR_PATH_TO_FILES 
 ```
-Optionall you can pass in a `f` to convert to .mp4 without additional encoding.
+Optionall you can pass in a `-f` to convert to .mp4 without additional encoding.

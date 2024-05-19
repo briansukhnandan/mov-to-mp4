@@ -1,12 +1,9 @@
 #!/bin/sh
 
-#####################
-# Process arguments #
-#####################
 while getopts p: flag
 do
   case "${flag}" in
-    # Remove trailing / from dir path and mod files path.
+    # Remove trailing / from dir path
     p) path=$(echo ${OPTARG} | sed 's:/*$::');;
   esac
 done

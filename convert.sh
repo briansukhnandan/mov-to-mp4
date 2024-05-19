@@ -20,17 +20,19 @@ if [ -d $path ]; then
   mkdir p $outdir
 
   for file in "$path"/*; do
-    outputFileName="output_$fileIdx.mp4"
-    echo "Processing file $file. Saving to $outputFileName"
+    if [[ -f $file ]]; then
+      outputFileName="output_$fileIdx.mp4"
+      echo "Processing file $file. Saving to $outputFileName"
 
-    if [ $SHOULD_USE_FAST_PROCESSING == "true" ]; then
-      echo "Processing without encoding (fast)..."
-      ffmpeg -i $file -qscale 0 $outdir/$outputFileName
-    else
-      echo "Processing using encoding (best quality)..."
-      ffmpeg -i $file -q:v 0 $outdir/$outputFileName
+      if [ $SHOULD_USE_FAST_PROCESSING == "true" ]; then
+        echo "Processing without encoding (fast)..."
+        ffmpeg -i $file -qscale 0 $outdir/$outputFileName
+      else
+        echo "Processing using encoding (best quality)..."
+        ffmpeg -i $file -q:v 0 $outdir/$outputFileName
+      fi
+
+      (( fileIdx++ ))
     fi
-
-    (( fileIdx++ ))
   done
 fi

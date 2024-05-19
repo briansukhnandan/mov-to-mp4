@@ -10,4 +10,3 @@
 chmod +x convert.sh
 ./convert.sh -p $YOUR_PATH_TO_FILES 
 ```
-Optionally you can pass in a `-f` to convert to .mp4 without additional encoding.

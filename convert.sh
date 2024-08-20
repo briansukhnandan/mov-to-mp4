@@ -11,7 +11,7 @@ done
 if [ -d $path ]; then
   fileIdx=0
   outdir="$path/output/"
-  mkdir p $outdir
+  mkdir -p $outdir
 
   for file in "$path"/*; do
     if [[ -f $file ]]; then

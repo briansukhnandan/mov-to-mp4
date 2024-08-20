@@ -8,5 +8,5 @@
 
 ```
 chmod +x convert.sh
-./convert.sh -p $YOUR_PATH_TO_FILES 
+./convert.sh -p $YOUR_PATH_TO_FILES -m fast|quality
 ```
